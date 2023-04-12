@@ -47,9 +47,8 @@
 					<i class="fa-regular fa-circle-play"></i>
 				</button>
 				<video class="img-fluid img-thumbnail"
-					preload="metadata"
-					<source
-					src="{{ $U('/file?folder='. $folderIndex . '&path=' . $item['relativePath']) }}">
+					preload="metadata">
+					<source src="{{ $U('/file?folder='. $folderIndex . '&path=' . $item['relativePath']) }}">
 				</video>
 			</div>
 		</a>
