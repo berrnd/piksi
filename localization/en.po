@@ -1,0 +1,83 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"X-Domain: piksi/strings\n"
+
+msgid "Overview"
+msgstr "Overview"
+
+msgid "About"
+msgstr "About"
+
+# Lowercase locale based on the filename in /public/node_modules/moment/locale
+msgid "moment_locale"
+msgstr "x"
+
+msgid "Back"
+msgstr "Back"
+
+msgid "%1$s picture"
+msgid_plural "%1$s pictures"
+msgstr[0] "%1$s pictures"
+msgstr[1] "%1$s pictures"
+
+msgid "%1$s video"
+msgid_plural "%1$s videos"
+msgstr[0] "%1$s video"
+msgstr[1] "%1$s videos"
+
+msgid "%1$s album"
+msgid_plural "%1$s albums"
+msgstr[0] "%1$s album"
+msgstr[1] "%1$s albums"
+
+msgid "Close"
+msgstr "Close"
+
+msgid "About Piksi"
+msgstr "About Piksi"
+
+msgid "Released on"
+msgstr "Released on"
+
+msgid "Do you find Piksi useful?"
+msgstr "Do you find Piksi useful?"
+
+msgid "Say thanks"
+msgstr "Say thanks"
+
+msgid "Server error"
+msgstr "Server error"
+
+msgid "A server error occured while processing your request"
+msgstr "A server error occured while processing your request"
+
+msgid "If you think this is a bug, please report it"
+msgstr "If you think this is a bug, please report it"
+
+msgid "Error source"
+msgstr "Error source"
+
+msgid "Error message"
+msgstr "Error message"
+
+msgid "Stack trace"
+msgstr "Stack trace"
+
+msgid "Easy error info copy & paste (for reporting)"
+msgstr "Easy error info copy & paste (for reporting)"
+
+msgid "Page not found"
+msgstr "Page not found"
+
+msgid "This page does not exist"
+msgstr "This page does not exist"
+
+msgid "You will be redirected to the default page in %1$s seconds"
+msgstr "You will be redirected to the default page in %1$s seconds"
+
+msgid "Today"
+msgstr "Today"

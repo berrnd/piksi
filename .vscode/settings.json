@@ -1,0 +1,16 @@
+{
+	"phpserver.relativePath": "public",
+	"editor.formatOnType": true,
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true,
+	"editor.insertSpaces": false,
+	"javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+	"javascript.format.placeOpenBraceOnNewLineForFunctions": true,
+	"javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+	"javascript.preferences.quoteStyle": "double",
+	"blade.format.enable": true,
+	"html.format.wrapAttributes": "force",
+	"html.format.wrapLineLength": 0,
+	"php-cs-fixer.formatHtml": true,
+	"php-cs-fixer.autoFixBySemicolon": true
+}

@@ -1,0 +1,40 @@
+﻿body {
+	font-family: 'Noto Sans', sans-serif;
+}
+
+a.discrete-link {
+	text-decoration: none !important;
+	color: inherit !important;
+	transition: all 0.3s !important;
+}
+
+a.discrete-link:hover {
+	color: #337ab7 !important;
+	text-decoration: none !important;
+}
+
+a.discrete-link:focus {
+	color: #ab2230 !important;
+	text-decoration: none !important;
+}
+
+.embed-responsive {
+	position: relative;
+	display: block;
+	width: 100%;
+	padding: 0;
+	overflow: hidden;
+}
+
+.timeago-contextual {
+	font-style: italic;
+	font-size: 0.8em;
+}
+
+.navbar-brand {
+	letter-spacing: -0.12rem;
+}
+
+.embedded .hide-when-embedded {
+	display: none;
+}

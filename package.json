@@ -1,0 +1,13 @@
+{
+	"name": "piksi",
+	"private": true,
+	"dependencies": {
+		"@fontsource/noto-sans": "^4.5.11",
+		"@fortawesome/fontawesome-free": "^6.4.0",
+		"bootbox": "^6.0.0",
+		"bootstrap": "^5.2.3",
+		"gettext-translator": "^3.0.1",
+		"jquery": "^3.6.4",
+		"moment": "^2.29.4"
+	}
+}

@@ -1,0 +1,83 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"X-Domain: piksi/strings\n"
+
+msgid "Overview"
+msgstr "Übersicht"
+
+msgid "About"
+msgstr "Über"
+
+# Lowercase locale based on the filename in /public/node_modules/moment/locale
+msgid "moment_locale"
+msgstr "de"
+
+msgid "Back"
+msgstr "Zurück"
+
+msgid "%1$s picture"
+msgid_plural "%1$s pictures"
+msgstr[0] "%1$s Bild"
+msgstr[1] "%1$s Bilder"
+
+msgid "%1$s video"
+msgid_plural "%1$s videos"
+msgstr[0] "%1$s Video"
+msgstr[1] "%1$s Videos"
+
+msgid "%1$s album"
+msgid_plural "%1$s albums"
+msgstr[0] "%1$s Album"
+msgstr[1] "%1$s Alben"
+
+msgid "Close"
+msgstr "Schließen"
+
+msgid "About Piksi"
+msgstr "Über Piksi"
+
+msgid "Released on"
+msgstr "Veröffentlicht am"
+
+msgid "Do you find Piksi useful?"
+msgstr "Findest du Piksi nützlich?"
+
+msgid "Say thanks"
+msgstr "Sag Danke"
+
+msgid "Server error"
+msgstr "Serverfehler"
+
+msgid "A server error occured while processing your request"
+msgstr "Bei der Verarbeitung deiner Anfrage ist ein Serverfehler aufgetreten"
+
+msgid "If you think this is a bug, please report it"
+msgstr "Wenn du denkst, dass dies ein Fehler ist, melde ihn bitte"
+
+msgid "Error source"
+msgstr "Fehlerquelle"
+
+msgid "Error message"
+msgstr "Fehlermeldung"
+
+msgid "Stack trace"
+msgstr "Stacktrace"
+
+msgid "Easy error info copy & paste (for reporting)"
+msgstr "Easy Fehler-Info Copy & Paste (für Fehlerreporting)"
+
+msgid "Page not found"
+msgstr "Seite nicht gefunden"
+
+msgid "This page does not exist"
+msgstr "Diese Seite existiert nicht"
+
+msgid "You will be redirected to the default page in %1$s seconds"
+msgstr "Dur wirst in %1$s Sekunden zur Startseite weitergeleitet"
+
+msgid "Today"
+msgstr "Heute"
