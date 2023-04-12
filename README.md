@@ -11,7 +11,7 @@
 
 ## Features / Motivation
 
-Lately I've digitzed a large number of photos and wanted to make them accessible to older family members. There are a lot of web-based image galleries out there and I kind of tried them all, but none of them met my expectations of a simple user interface that would work for people who didn't grow up with computers.
+Lately I've digitized a large number of photos and wanted to make them accessible to older family members. There are a lot of web-based image galleries out there and I kind of tried them all, but none of them met my expectations of a simple user interface that would work for people who didn't grow up with computers.
 
 I wanted to have a tool that
 
