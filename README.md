@@ -1,6 +1,6 @@
 <div align="center">
-<img alt="Logo" height="50" src="https://raw.githubusercontent.com/berrnd/piksi/main/public/img/logo.svg?sanitize=true" />
-<h4>A web-based self-hosted image gallery (viewer for an existing album based folder structure) focused on simplicity.<br>Created by <a href="https://github.com/berrnd">@berrnd</a></h4>
+<img alt="Logo" height="60" src="https://raw.githubusercontent.com/berrnd/piksi/main/public/img/logo.svg?sanitize=true" />
+<h3>A web-based self-hosted image gallery (viewer for an existing album based folder structure) focused on simplicity.<br>Created by <a href="https://github.com/berrnd">@berrnd</a></h3>
 </div>
 
 -----
