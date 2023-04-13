@@ -7,7 +7,7 @@
 
 ## Give it a try
 
-- Public demo of the latest stable version (`release` branch) &rarr; [https://piksi-demo.berrnd.de](https://piksi-demo.berrnd.de)
+- Public demo of the latest stable version (`release` branch) &rarr; [https://piksi-demo.berrnd.xyz](https://piksi-demo.berrnd.xyz)
 
 ## Features / Motivation
 
