@@ -122,7 +122,7 @@ $(document).on("click", ".show-as-dialog-image", function(e)
 	var dialogHtml = '\
 		<div class="d-grid"> \
 			<button class="btn btn-light mb-2 close-bootbox"> \
-				&larr; ' + __t('Back') + ' \
+				<i class="fa-solid fa-left-long"></i> ' + __t('Back') + ' \
 			</button> \
 		</div> \
 		<img class="img-fluid close-bootbox" src="' + $(e.currentTarget).attr("href") + '"></img>';
@@ -142,7 +142,7 @@ $(document).on("click", ".show-as-dialog-video", function(e)
 	var dialogHtml = '\
 		<div class="d-grid"> \
 			<button class="btn btn-light mb-2 close-bootbox"> \
-				&larr; ' + __t('Back') + ' \
+				<i class="fa-solid fa-left-long"></i> ' + __t('Back') + ' \
 			</button> \
 		</div> \
 		<div class="ratio ratio-16x9"> \

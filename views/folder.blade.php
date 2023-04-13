@@ -22,7 +22,7 @@
 @section('navbarAdditional')
 <a class="btn btn-light me-auto ms-3"
 	href="@if($path == '/') {{ $U('/') }} @else {{ $U('/?folder='. $folderIndex . '&path=' . str_replace('\\', '/', dirname($path))) }}  @endif">
-	&larr; {{ $__t('Back') }}
+	<i class="fa-solid fa-left-long"></i> {{ $__t('Back') }}
 </a>
 @stop
 @endif
