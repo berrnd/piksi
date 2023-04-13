@@ -42,7 +42,6 @@
 		var Piksi = { };
 		Piksi.Mode = '{{ PIKSI_MODE }}';
 		Piksi.BaseUrl = '{{ $U('/') }}';
-		Piksi.CurrentUrlRelative = "/" + window.location.href.split('?')[0].replace(Piksi.BaseUrl, "");
 		Piksi.LocalizationStrings = {!! $LocalizationStrings !!};
 	</script>
 </head>

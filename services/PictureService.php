@@ -4,7 +4,7 @@ namespace Piksi\Services;
 
 class PictureService extends BaseService
 {
-	public function GetRootFolderInfo()
+	public function GetRootFolder()
 	{
 		$folders = [];
 

@@ -20,7 +20,7 @@ class PicturesController extends BaseController
 			else
 			{
 				return $this->render($response, 'overview', [
-					'rootFolders' => $this->getPictureService()->GetRootFolderInfo()
+					'rootFolders' => $this->getPictureService()->GetRootFolder()
 				]);
 			}
 		}
