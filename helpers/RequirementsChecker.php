@@ -61,7 +61,7 @@ class RequirementsChecker
 		{
 			if (!is_dir($folder['path']))
 			{
-				throw new \Exception('Folder "' . $folder['name'] . '" (' . $folder['path'] . ') doesn\'t exist or is not accesible');
+				throw new \Exception('Folder "' . $folder['name'] . '" (' . $folder['path'] . ') doesn\'t exist or is not accessible');
 			}
 		}
 	}

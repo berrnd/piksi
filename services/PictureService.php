@@ -128,16 +128,16 @@ class PictureService extends BaseService
 					continue;
 				}
 
-				$thumbRelativePath = $subFolderPathRelative . '/' . PIKSI_THUMBS_FOLDER_NAME . '/' . $file->getFilename();
-				if (!file_exists(str_replace($file->getFilename(), PIKSI_THUMBS_FOLDER_NAME . '/' . $file->getFilename(), $file->getRealPath())))
-				{
-					$thumbRelativePath = $subFolderPathRelative . '/' . $file->getFilename();
-				}
-
 				$type = 'picture';
 				if (in_array($fileExtension, PIKSI_VIDEO_FILEEXT))
 				{
 					$type = 'video';
+				}
+
+				$thumbRelativePath = $subFolderPathRelative . '/' . PIKSI_THUMBS_FOLDER_NAME . '/' . $file->getFilename();
+				if ($type == 'video' || !file_exists(str_replace($file->getFilename(), PIKSI_THUMBS_FOLDER_NAME . '/' . $file->getFilename(), $file->getRealPath())))
+				{
+					$thumbRelativePath = $subFolderPathRelative . '/' . $file->getFilename();
 				}
 
 				$items[] = [

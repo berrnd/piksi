@@ -77,8 +77,6 @@ __n = function(number, singularForm, pluralForm)
 
 ResizeResponsiveEmbeds = function()
 {
-	$("embed.embed-responsive").attr("height", $("body").height().toString() + "px");
-
 	$("iframe.embed-responsive").each(function()
 	{
 		$(this).attr("height", $(this)[0].contentWindow.document.body.scrollHeight.toString() + "px");
@@ -100,7 +98,7 @@ $(document).on("click", ".show-as-dialog-link", function(e)
 	var link = $(e.currentTarget).attr("href");
 
 	bootbox.dialog({
-		"message": '<iframe height="650px" class="embed-responsive" src="' + link + '"></iframe>',
+		"message": '<iframe class="embed-responsive" src="' + link + '"></iframe>',
 		"size": "large",
 		"backdrop": true,
 		"closeButton": false,
@@ -121,28 +119,44 @@ $(document).on("click", ".show-as-dialog-image", function(e)
 {
 	e.preventDefault();
 
-	var link = $(e.currentTarget).attr("href");
+	var dialogHtml = '\
+		<div class="d-grid"> \
+			<button class="btn btn-light mb-2 close-bootbox"> \
+				&larr; ' + __t('Back') + ' \
+			</button> \
+		</div> \
+		<img class="img-fluid close-bootbox" src="' + $(e.currentTarget).attr("href") + '"></img>';
 
 	bootbox.dialog({
-		"message": '<img class="img-fluid h-25 close-bootbox" src="' + link + '"></img>',
+		"message": dialogHtml,
 		"size": "extra-large",
 		"backdrop": true,
-		"closeButton": true
-	});
+		"closeButton": false
+	}).find(".modal-content").addClass("bg-secondary");
 });
 
 $(document).on("click", ".show-as-dialog-video", function(e)
 {
 	e.preventDefault();
 
-	var link = $(e.currentTarget).attr("href");
+	var dialogHtml = '\
+		<div class="d-grid"> \
+			<button class="btn btn-light mb-2 close-bootbox"> \
+				&larr; ' + __t('Back') + ' \
+			</button> \
+		</div> \
+		<div class="ratio ratio-16x9"> \
+			<video controls autoplay class="img-fluid close-bootbox"> \
+				<source src="' + $(e.currentTarget).attr("href") + '"> \
+			</video> \
+		</div>';
 
 	bootbox.dialog({
-		"message": '<div class="ratio ratio-16x9"><video controls autoplay class="img-fluid close-bootbox"><source src="' + link + '"></video></div>',
+		"message": dialogHtml,
 		"size": "extra-large",
 		"backdrop": true,
-		"closeButton": true
-	});
+		"closeButton": false
+	}).find(".modal-content").addClass("bg-secondary");
 });
 
 $(document).on("click", ".close-bootbox", function(e)

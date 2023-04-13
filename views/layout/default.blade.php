@@ -19,7 +19,7 @@
 		sizes="32x32"
 		href="{{ $U('/img/icon-32.png?v=', true) }}{{ $version }}">
 	<link rel="manifest"
-		href="{{ $U('/img/manifest.json?v=', true) }}{{ $version }}">
+		href="{{ $U('/manifest.json?v=', true) }}{{ $version }}">
 
 	<title>@yield('title') | {{$title}}</title>
 
@@ -53,7 +53,7 @@
 		class="navbar navbar sticky-top navbar-dark bg-secondary">
 
 		<div class="container-fluid">
-			<a class="navbar-brand mb-0 h1 fst-bold"
+			<a class="navbar-brand mb-0 h1"
 				href="{{ $U('/') }}">
 				{{$title}}
 			</a>
@@ -64,9 +64,9 @@
 
 			@yield('navbarAdditional')
 
-			<span class="navbar-text">
-				<a id="about-link"
-					class="show-as-dialog-link text-decoration-none"
+			<span id="about-link"
+				class="navbar-text small">
+				<a class="show-as-dialog-link text-decoration-none"
 					href="{{ $U('/about?embedded') }}">{{ $__t('About') }}</a>
 			</span>
 		</div>

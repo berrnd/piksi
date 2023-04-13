@@ -30,12 +30,12 @@
 			<div class="small text-muted pt-2">
 				Piksi is a project by
 				<a href="https://berrnd.de"
-					class="text-decoration-none text-dark"
+					class="text-decoration-none link-dark"
 					target="_blank">Bernd Bestel</a><br>
 				Created with passion since 2023<br>
 				Life runs on code<br>
 				<a href="https://github.com/berrnd/piksi"
-					class="text-decoration-none text-dark"
+					class="text-decoration-none link-dark"
 					target="_blank">
 					<i class="fa-brands fa-github"></i>
 				</a>

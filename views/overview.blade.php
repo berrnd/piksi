@@ -10,7 +10,7 @@
 		<a href="{{ $U('/?folder='. $loop->index . '&path=/') }}"
 			class="discrete-link">
 			<div class="card text-center">
-				<div class="card-header fs-2">
+				<div class="card-header fs-2 fw-semibold">
 					{{ $folder['name'] }}
 				</div>
 				<div class="card-body fs-3">

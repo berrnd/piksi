@@ -57,7 +57,7 @@
 			class="discrete-link">
 			<div class="card text-center">
 				@if(empty($item['coverImagePathRelative']))
-				<div class="card-header fs-2">
+				<div class="card-header fs-2 fw-semibold">
 					{{ $item['name'] }}
 				</div>
 				@else
