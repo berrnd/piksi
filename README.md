@@ -83,11 +83,13 @@ There is none. The progress of a specific bug/enhancement is always tracked in t
 
 ![overview](https://github.com/berrnd/piksi/raw/main/.github/publication_assets/overview.png "overview")
 
-![album_with_albums](https://github.com/berrnd/piksi/raw/main/.github/publication_assets/album_with_albums.png "album_with_albums")
+![cover_albums](https://github.com/berrnd/piksi/raw/main/.github/publication_assets/cover_albums.png "cover_albums")
 
 ![gallery](https://github.com/berrnd/piksi/raw/main/.github/publication_assets/gallery.png "gallery")
 
 ![gallery_with_videos](https://github.com/berrnd/piksi/raw/main/.github/publication_assets/gallery_with_videos.png "gallery_with_videos")
+
+![lightbox](https://github.com/berrnd/piksi/raw/main/.github/publication_assets/lightbox.png "lightbox")
 
 ## License
 
