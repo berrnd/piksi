@@ -4,7 +4,7 @@ namespace Piksi\Controllers;
 
 use Piksi\Services\ApplicationService;
 use Piksi\Services\LocalizationService;
-use Piksi\Services\PictureService;
+use Piksi\Services\MediaFolderService;
 
 class BaseController
 {
@@ -31,9 +31,9 @@ class BaseController
 		return LocalizationService::getInstance(PIKSI_LOCALE);
 	}
 
-	protected function getPictureService()
+	protected function getMediaFolderService()
 	{
-		return PictureService::getInstance();
+		return MediaFolderService::getInstance();
 	}
 
 	protected function render($response, $page, $data = [])

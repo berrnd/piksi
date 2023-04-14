@@ -6,7 +6,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Psr7\Stream;
 
-class PicturesController extends BaseController
+class MediaFolderController extends BaseController
 {
 	public function Overview(Request $request, Response $response, array $args)
 	{
@@ -20,7 +20,7 @@ class PicturesController extends BaseController
 			else
 			{
 				return $this->render($response, 'overview', [
-					'rootFolders' => $this->getPictureService()->GetRootFolder()
+					'rootFolders' => $this->getMediaFolderService()->GetRootFolder()
 				]);
 			}
 		}
@@ -34,7 +34,7 @@ class PicturesController extends BaseController
 				return $this->render($response, 'folder', [
 					'folderIndex' => $folderIndex,
 					'path' => $path,
-					'items' => $this->getPictureService()->GetFolder($folderIndex, $path)
+					'items' => $this->getMediaFolderService()->GetFolder($folderIndex, $path)
 				]);
 			}
 			else

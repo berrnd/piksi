@@ -35,6 +35,11 @@ msgid_plural "%1$s videos"
 msgstr[0] ""
 msgstr[1] ""
 
+msgid "%1$s audio"
+msgid_plural "%1$s audios"
+msgstr[0] ""
+msgstr[1] ""
+
 msgid "%1$s album"
 msgid_plural "%1$s albums"
 msgstr[0] ""

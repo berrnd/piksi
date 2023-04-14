@@ -1,6 +1,6 @@
 <div align="center">
 <img alt="Logo" height="60" src="https://raw.githubusercontent.com/berrnd/piksi/main/public/img/logo.svg?sanitize=true" />
-<h3>A web-based self-hosted image gallery (viewer for an existing album based folder structure) focused on simplicity.<br>Created by <a href="https://github.com/berrnd">@berrnd</a></h3>
+<h3>A web-based self-hosted media gallery focused on simplicity<br>It displays photos, videos and audios from an album based folder structure in an easy to use yet beautiful way.<br>Created by <a href="https://github.com/berrnd">@berrnd</a></h3>
 </div>
 
 -----
@@ -15,12 +15,12 @@ Lately I've digitized a large number of photos and wanted to make them accessibl
 
 I wanted to have a tool that
 
-- displays pictures from an existing folder structure (one album per folder, unlimited subfolders are supported)
+- displays media files from an existing folder structure (one album per folder, unlimited subfolders are supported)
 - uses the folder name for albums or alternatively a cover image (configurable naming convention)
 - uses pre-generated thumbnails (from a subfolder per album, again configurable naming convention)
 - has a strong focus on simplictiy - that explicitly means:
   - no file management, sharing or similar gallery organization options (it's just a viewer)
-  - it doesn't show any technical information like file names or EXIF metadata
+  - any technical information is hidden by default, optionally filenames can be shown
   - it doesn't have user management (means no authentication, so run this in a trusted local network only)
 
 to make those family memories of yesterday accessible on devices of today, but without the overly complex stuff which practically often discourages the mentioned target audience to have fun with modern things. I haven't found that, so this is Piksi.

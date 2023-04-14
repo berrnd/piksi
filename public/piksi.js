@@ -154,7 +154,7 @@ $(document).on("click", ".show-as-dialog-video", function(e)
 			</button> \
 		</div> \
 		<div class="ratio ratio-16x9"> \
-			<video controls autoplay class="img-fluid close-bootbox"> \
+			<video controls autoplay class="img-fluid"> \
 				<source src="' + $(e.currentTarget).attr("href") + '"> \
 			</video> \
 		</div>';
@@ -261,4 +261,9 @@ $(document).on("click", ".rotate-image-button", function(e)
 
 	var button = $(e.currentTarget);
 	RotateImage(button.parent().parent().parent().find("img"), Number.parseInt(button.attr("data-rotation-factor")));
+});
+
+$(".video-inline").on("fullscreenchange", function(e)
+{
+	$(e.currentTarget).toggleClass("img-thumbnail");
 });

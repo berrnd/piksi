@@ -48,20 +48,30 @@ Setting('FOLDERS', [
 	]
 ]);
 
-// File extensions (without leading dot) of pictures to show
-// Leave empty to not show pictures
+// File extensions (without leading dot) of photos to show
+// Leave empty to not show photos
 Setting('PICTURE_FILEEXT', ['png', 'jpg']);
 
 // File extensions (without leading dot) of videos to show
 // Leave empty to not show videos
 Setting('VIDEO_FILEEXT', ['mp4']);
 
-// When in this subfolder (per album folder) a same named picture file exists,
-// it is used as the thumbnail file (should be smaller / lower quality)
-Setting('THUMBS_FOLDER_NAME', '__thumbs');
+// File extensions (without leading dot) of audios to show
+// Leave empty to not show audios
+Setting('AUDIO_FILEEXT', ['mp3']);
 
 // When this file exists per album folder, it will be shown instead of the folder name
 Setting('ALBUM_COVER_FILENAME', '__album.jpg');
+
+// When in this subfolder (per album folder) a same named picture file exists,
+// it is used as the thumbnail (only for pictures)
+Setting('THUMBS_FOLDER_NAME', '__thumbs');
+
+// Whether to play videos inline (=> true) or only in a lightbox (=> false)
+Setting('PLAY_VIDEOS_INLINE', false);
+
+// Whether to show filenames or not
+Setting('SHOW_FILENAMES', false);
 
 // When this is set, this is used / shown as the application title (instead of "Piksi")
 Setting('OVERWRITE_TITLE', '');

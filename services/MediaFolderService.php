@@ -2,7 +2,7 @@
 
 namespace Piksi\Services;
 
-class PictureService extends BaseService
+class MediaFolderService extends BaseService
 {
 	public function GetRootFolder()
 	{
@@ -19,6 +19,7 @@ class PictureService extends BaseService
 				$foldersCount = 0;
 				$picturesCount = 0;
 				$videosCount = 0;
+				$audiosCount = 0;
 				foreach ($subFolderInfo as $info)
 				{
 					if ($info['type'] == 'picture')
@@ -28,6 +29,10 @@ class PictureService extends BaseService
 					elseif ($info['type'] == 'video')
 					{
 						$videosCount++;
+					}
+					elseif ($info['type'] == 'audio')
+					{
+						$audiosCount++;
 					}
 					elseif ($info['type'] == 'folder')
 					{
@@ -39,7 +44,8 @@ class PictureService extends BaseService
 					'name' => $folder['name'],
 					'foldersCount' => $foldersCount,
 					'picturesCount' => $picturesCount,
-					'videosCount' => $videosCount
+					'videosCount' => $videosCount,
+					'audiosCount' => $audiosCount
 				];
 			}
 		}
@@ -64,6 +70,7 @@ class PictureService extends BaseService
 			throw new \Exception($subFolderPathRelative . ' is not a subfolder of ' . $folderPath . ' or it doesn\'t exist');
 		}
 
+		$allFileExtensions = array_merge(PIKSI_PICTURE_FILEEXT, PIKSI_VIDEO_FILEEXT, PIKSI_AUDIO_FILEEXT);
 		$items = [];
 		foreach (new \DirectoryIterator($subFolderPath) as $file)
 		{
@@ -90,6 +97,7 @@ class PictureService extends BaseService
 				$foldersCount = 0;
 				$picturesCount = 0;
 				$videosCount = 0;
+				$audiosCount = 0;
 				if (!$skipSubfolders)
 				{
 					$subFolderInfo = $this->GetFolder($folderIndex, $subFolderPathRelative . '/' . $file->getFilename());
@@ -102,6 +110,10 @@ class PictureService extends BaseService
 						elseif ($info['type'] == 'video')
 						{
 							$videosCount++;
+						}
+						elseif ($info['type'] == 'audio')
+						{
+							$audiosCount++;
 						}
 						elseif ($info['type'] == 'folder')
 						{
@@ -119,9 +131,10 @@ class PictureService extends BaseService
 					'foldersCount' => $foldersCount,
 					'picturesCount' => $picturesCount,
 					'videosCount' => $videosCount,
+					'audiosCount' => $audiosCount
 				];
 			}
-			elseif ($file->isFile() && in_array($fileExtension, array_merge(PIKSI_PICTURE_FILEEXT, PIKSI_VIDEO_FILEEXT)))
+			elseif ($file->isFile() && in_array($fileExtension, $allFileExtensions))
 			{
 				if ($file->getFilename() == PIKSI_ALBUM_COVER_FILENAME)
 				{
@@ -133,15 +146,20 @@ class PictureService extends BaseService
 				{
 					$type = 'video';
 				}
-
-				$thumbRelativePath = $subFolderPathRelative . '/' . PIKSI_THUMBS_FOLDER_NAME . '/' . $file->getFilename();
-				if ($type == 'video' || !file_exists(str_replace($file->getFilename(), PIKSI_THUMBS_FOLDER_NAME . '/' . $file->getFilename(), $file->getRealPath())))
+				elseif (in_array($fileExtension, PIKSI_AUDIO_FILEEXT))
 				{
-					$thumbRelativePath = $subFolderPathRelative . '/' . $file->getFilename();
+					$type = 'audio';
+				}
+
+				$thumbRelativePath = $subFolderPathRelative . '/' . $file->getFilename();
+				if ($type == 'picture' && file_exists(str_replace($file->getFilename(), PIKSI_THUMBS_FOLDER_NAME . '/' . $file->getFilename(), $file->getRealPath())))
+				{
+					$thumbRelativePath = $subFolderPathRelative . '/' . PIKSI_THUMBS_FOLDER_NAME . '/' . $file->getFilename();
 				}
 
 				$items[] = [
 					'type' => $type,
+					'name' => $file->getBasename('.' . $file->getExtension()),
 					'sort_name' => '_b_' . $file->getFilename(),
 					'relativePath' => $subFolderPathRelative . '/' . $file->getFilename(),
 					'thumbRelativePath' => $thumbRelativePath
