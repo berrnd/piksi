@@ -81,3 +81,9 @@ msgstr "You will be redirected to the default page in %1$s seconds"
 
 msgid "Today"
 msgstr "Today"
+
+msgid "Rotate image to the left"
+msgstr "Rotate image to the left"
+
+msgid "Rotate image to the right"
+msgstr "Rotate image to the right"

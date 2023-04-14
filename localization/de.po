@@ -81,3 +81,9 @@ msgstr "Dur wirst in %1$s Sekunden zur Startseite weitergeleitet"
 
 msgid "Today"
 msgstr "Heute"
+
+msgid "Rotate image to the left"
+msgstr "Bild nach links drehen"
+
+msgid "Rotate image to the right"
+msgstr "Bild nach rechts drehen"

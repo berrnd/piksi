@@ -87,3 +87,9 @@ msgstr ""
 
 msgid "Today"
 msgstr ""
+
+msgid "Rotate image to the left"
+msgstr ""
+
+msgid "Rotate image to the right"
+msgstr ""

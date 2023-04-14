@@ -123,7 +123,19 @@ $(document).on("click", ".show-as-dialog-image", function(e)
 				<i class="fa-solid fa-left-long"></i> ' + __t('Back') + ' \
 			</button> \
 		</div> \
-		<img class="img-fluid close-bootbox" src="' + $(e.currentTarget).attr("href") + '"></img>';
+		<img class="img-fluid close-bootbox" src="' + $(e.currentTarget).attr("href") + '"></img> \
+		<div class="row mt-2"> \
+			<div class="col"> \
+				<button class="btn btn-light w-100 rotate-image-button" data-rotation-factor="-90"> \
+					<i class="fa-solid fa-rotate-left"></i> ' + __t('Rotate image to the left') + ' \
+				</button> \
+			</div> \
+			<div class="col"> \
+				<button class="btn btn-light w-100 rotate-image-button" data-rotation-factor="90"> \
+					<i class="fa-solid fa-rotate-right"></i> ' + __t('Rotate image to the right') + ' \
+				</button> \
+			</div> \
+		</div>';
 
 	bootbox.dialog({
 		"message": dialogHtml,
@@ -218,3 +230,35 @@ bootbox.setDefaults({
 	"closeButton": false,
 	"centerVertical": true
 })
+
+RotateImage = function(img, rotationFactor)
+{
+	var currentRotation = 0
+	if (img.hasAttr("data-current-rotation"))
+	{
+		currentRotation = Number.parseInt(img.attr("data-current-rotation"))
+	}
+
+	currentRotation += rotationFactor;
+	if (Math.abs(currentRotation) == 360)
+	{
+		currentRotation = 0;
+	}
+
+	var scale = 1;
+	if (Math.abs(currentRotation) == 90 || Math.abs(currentRotation) == 270)
+	{
+		scale = img.get(0).naturalHeight / img.get(0).naturalWidth;
+	}
+
+	img.attr("data-current-rotation", currentRotation);
+	img.css("transform", `rotate(${currentRotation}deg) scale(${scale})`);
+}
+
+$(document).on("click", ".rotate-image-button", function(e)
+{
+	e.preventDefault();
+
+	var button = $(e.currentTarget);
+	RotateImage(button.parent().parent().parent().find("img"), Number.parseInt(button.attr("data-rotation-factor")));
+});
