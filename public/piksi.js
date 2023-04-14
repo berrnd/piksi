@@ -100,8 +100,6 @@ $(document).on("click", ".show-as-dialog-link", function(e)
 	bootbox.dialog({
 		"message": '<iframe class="embed-responsive" src="' + link + '"></iframe>',
 		"size": "large",
-		"backdrop": true,
-		"closeButton": false,
 		"buttons": {
 			"cancel": {
 				"label": __t("Close"),
@@ -129,9 +127,7 @@ $(document).on("click", ".show-as-dialog-image", function(e)
 
 	bootbox.dialog({
 		"message": dialogHtml,
-		"size": "extra-large",
-		"backdrop": true,
-		"closeButton": false
+		"size": "extra-large"
 	}).find(".modal-content").addClass("bg-secondary");
 });
 
@@ -153,9 +149,7 @@ $(document).on("click", ".show-as-dialog-video", function(e)
 
 	bootbox.dialog({
 		"message": dialogHtml,
-		"size": "extra-large",
-		"backdrop": true,
-		"closeButton": false
+		"size": "extra-large"
 	}).find(".modal-content").addClass("bg-secondary");
 });
 
@@ -218,3 +212,9 @@ $(document).on("click", ".easy-copy-textbox", function()
 {
 	$(this).select();
 });
+
+bootbox.setDefaults({
+	"backdrop": true,
+	"closeButton": false,
+	"centerVertical": true
+})
