@@ -79,16 +79,17 @@ class MediaFolderService extends BaseService
 				continue;
 			}
 
+			$fileName = $file->getFilename();
 			$fileExtension = strtolower($file->getExtension());
 
 			if ($file->isDir())
 			{
-				if ($file->getFilename() == PIKSI_THUMBS_FOLDER_NAME)
+				if ($fileName == PIKSI_THUMBS_FOLDER_NAME)
 				{
 					continue;
 				}
 
-				$coverImagePathRelative = $subFolderPathRelative . '/' . $file->getFilename() . '/' . PIKSI_ALBUM_COVER_FILENAME;
+				$coverImagePathRelative = $subFolderPathRelative . '/' . $fileName . '/' . PIKSI_ALBUM_COVER_FILENAME;
 				if (!file_exists($file->getRealPath() . '/' . PIKSI_ALBUM_COVER_FILENAME))
 				{
 					$coverImagePathRelative = '';
@@ -100,7 +101,7 @@ class MediaFolderService extends BaseService
 				$audiosCount = 0;
 				if (!$skipSubfolders)
 				{
-					$subFolderInfo = $this->GetFolder($folderIndex, $subFolderPathRelative . '/' . $file->getFilename());
+					$subFolderInfo = $this->GetFolder($folderIndex, $subFolderPathRelative . '/' . $fileName);
 					foreach ($subFolderInfo as $info)
 					{
 						if ($info['type'] == 'picture')
@@ -122,11 +123,18 @@ class MediaFolderService extends BaseService
 					}
 				}
 
+				$alternativeSortTextFilePath = $file->getRealPath() . '/../' . $fileName . '.sort';
+				$sortName = $fileName;
+				if (file_exists($alternativeSortTextFilePath))
+				{
+					$sortName = file_get_contents($alternativeSortTextFilePath);
+				}
+
 				$items[] = [
 					'type' => 'folder',
-					'sort_name' => '_a_' . $file->getFilename(),
-					'name' => $file->getFilename(),
-					'relativePath' => $subFolderPathRelative . '/' . $file->getFilename(),
+					'sort_name' => 'aaaa' . $sortName,
+					'name' => $fileName,
+					'relativePath' => $subFolderPathRelative . '/' . $fileName,
 					'coverImagePathRelative' => $coverImagePathRelative,
 					'foldersCount' => $foldersCount,
 					'picturesCount' => $picturesCount,
@@ -136,7 +144,7 @@ class MediaFolderService extends BaseService
 			}
 			elseif ($file->isFile() && in_array($fileExtension, $allFileExtensions))
 			{
-				if ($file->getFilename() == PIKSI_ALBUM_COVER_FILENAME)
+				if ($fileName == PIKSI_ALBUM_COVER_FILENAME)
 				{
 					continue;
 				}
@@ -151,17 +159,17 @@ class MediaFolderService extends BaseService
 					$type = 'audio';
 				}
 
-				$thumbRelativePath = $subFolderPathRelative . '/' . $file->getFilename();
-				if ($type == 'picture' && file_exists(str_replace($file->getFilename(), PIKSI_THUMBS_FOLDER_NAME . '/' . $file->getFilename(), $file->getRealPath())))
+				$thumbRelativePath = $subFolderPathRelative . '/' . $fileName;
+				if ($type == 'picture' && file_exists(str_replace($fileName, PIKSI_THUMBS_FOLDER_NAME . '/' . $fileName, $file->getRealPath())))
 				{
-					$thumbRelativePath = $subFolderPathRelative . '/' . PIKSI_THUMBS_FOLDER_NAME . '/' . $file->getFilename();
+					$thumbRelativePath = $subFolderPathRelative . '/' . PIKSI_THUMBS_FOLDER_NAME . '/' . $fileName;
 				}
 
 				$items[] = [
 					'type' => $type,
 					'name' => $file->getBasename('.' . $file->getExtension()),
-					'sort_name' => '_b_' . $file->getFilename(),
-					'relativePath' => $subFolderPathRelative . '/' . $file->getFilename(),
+					'sort_name' => 'bbbb' . $fileName,
+					'relativePath' => $subFolderPathRelative . '/' . $fileName,
 					'thumbRelativePath' => $thumbRelativePath
 				];
 			}

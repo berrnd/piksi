@@ -36,6 +36,8 @@ Setting('BASE_URL', '/');
 Setting('DISABLE_URL_REWRITING', false);
 
 // The folders to show / scan for media files
+// For deviating sorting: When next to a folder a file "<original folder name>.sort" exists,
+// the content of this file is used for sorting
 Setting('FOLDERS', [
 	[
 		'name' => 'Folder1',
