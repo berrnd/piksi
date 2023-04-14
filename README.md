@@ -1,6 +1,6 @@
 <div align="center">
 <img alt="Logo" height="60" src="https://raw.githubusercontent.com/berrnd/piksi/main/public/img/logo.svg?sanitize=true" />
-<h3>A web-based self-hosted media gallery focused on simplicity<br>It displays photos, videos and audios from an album based folder structure in an easy to use yet beautiful way.<br>Created by <a href="https://github.com/berrnd">@berrnd</a></h3>
+<h3>A web-based self-hosted media gallery focused on simplicity.<br>It displays photos, videos and audios from an album based folder structure in an easy to use yet beautiful way.<br>Created by <a href="https://github.com/berrnd">@berrnd</a></h3>
 </div>
 
 -----
