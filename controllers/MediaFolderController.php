@@ -15,7 +15,7 @@ class MediaFolderController extends BaseController
 			if (count(PIKSI_FOLDERS) == 1)
 			{
 				// Directly jump to the first folder when there is only 1 configured
-				return $response->withRedirect($this->AppContainer->get('UrlManager')->ConstructUrl('/?folder=0&path=/'));
+				return $response->withRedirect($this->AppContainer->get('UrlManager')->ConstructUrl('/?folder=0&path=' . urlencode('/')));
 			}
 			else
 			{

@@ -21,7 +21,7 @@
 @if((count(PIKSI_FOLDERS) == 1 && $path != '/') || count(PIKSI_FOLDERS) > 1)
 @section('navbarAdditional')
 <a class="btn btn-light me-auto ms-3"
-	href="@if($path == '/') {{ $U('/') }} @else {{ $U('/?folder='. $folderIndex . '&path=' . str_replace('\\', '/', dirname($path))) }}  @endif">
+	href="@if($path == '/') {{ $U('/') }} @else {{ $U('/?folder='. $folderIndex . '&path=' . urlencode(str_replace('\\', '/', dirname($path)))) }}  @endif">
 	<i class="fa-solid fa-left-long"></i> {{ $__t('Back') }}
 </a>
 @stop
@@ -37,27 +37,27 @@
 			@endif
 			@if($item['type'] == 'picture')
 			<a class="show-as-dialog-image"
-				href="{{ $U('/file?folder='. $folderIndex . '&path=' . $item['relativePath']) }}">
+				href="{{ $U('/file?folder='. $folderIndex . '&path=' . urlencode($item['relativePath'])) }}">
 				<img class="img-fluid img-thumbnail"
 					loading="lazy"
-					src="{{ $U('/file?folder='. $folderIndex . '&path=' . $item['thumbRelativePath']) }}">
+					src="{{ $U('/file?folder='. $folderIndex . '&path=' . urlencode($item['thumbRelativePath'])) }}">
 			</a>
 			@elseif($item['type'] == 'video' && PIKSI_PLAY_VIDEOS_INLINE)
 			<video controls
 				class="img-fluid img-thumbnail video-inline"
 				preload="metadata">
-				<source src="{{ $U('/file?folder='. $folderIndex . '&path=' . $item['relativePath']) }}">
+				<source src="{{ $U('/file?folder='. $folderIndex . '&path=' . urlencode($item['relativePath'])) }}">
 			</video>
 			@elseif($item['type'] == 'video' && !PIKSI_PLAY_VIDEOS_INLINE)
 			<a class="show-as-dialog-video"
-				href="{{ $U('/file?folder='. $folderIndex . '&path=' . $item['relativePath']) }}">
+				href="{{ $U('/file?folder='. $folderIndex . '&path=' . urlencode($item['relativePath'])) }}">
 				<div class="text-center position-relative">
 					<button class="btn btn-lg fs-1 btn-primary position-absolute top-50 start-50 translate-middle opacity-75 rounded-pill">
 						<i class="fa-regular fa-circle-play"></i>
 					</button>
 					<video class="img-fluid img-thumbnail"
 						preload="metadata">
-						<source src="{{ $U('/file?folder='. $folderIndex . '&path=' . $item['relativePath']) }}">
+						<source src="{{ $U('/file?folder='. $folderIndex . '&path=' . urlencode($item['relativePath'])) }}">
 					</video>
 				</div>
 			</a>
@@ -66,10 +66,10 @@
 				style="height: 50px;"
 				controls
 				preload="metadata">
-				<source src="{{ $U('/file?folder='. $folderIndex . '&path=' . $item['relativePath']) }}">
+				<source src="{{ $U('/file?folder='. $folderIndex . '&path=' . urlencode($item['relativePath'])) }}">
 			</audio>
 			@elseif($item['type'] == 'folder')
-			<a href="{{$U('/?folder='. $folderIndex . '&path=' . $item['relativePath'])}}"
+			<a href="{{$U('/?folder='. $folderIndex . '&path=' . urlencode($item['relativePath']))}}"
 				class="discrete-link">
 				<div class="card text-center">
 					@if(empty($item['coverImagePathRelative']))
@@ -79,7 +79,7 @@
 					@else
 					<img class="card-img-top"
 						loading="lazy"
-						src="{{ $U('/file?folder='. $folderIndex . '&path=' . $item['coverImagePathRelative']) }}">
+						src="{{ $U('/file?folder='. $folderIndex . '&path=' . urlencode($item['coverImagePathRelative'])) }}">
 					@endif
 					<div class="card-body fs-3">
 						@if($item['foldersCount'] > 0)

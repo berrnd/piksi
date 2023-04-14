@@ -7,7 +7,7 @@
 
 	@foreach($rootFolders as $folder)
 	<div class="col-12 col-xl-4 pb-2">
-		<a href="{{ $U('/?folder='. $loop->index . '&path=/') }}"
+		<a href="{{ $U('/?folder='. $loop->index . '&path=' . urlencode('/')) }}"
 			class="discrete-link">
 			<div class="card text-center">
 				<div class="card-header fs-2 fw-semibold">
