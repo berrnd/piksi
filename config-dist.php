@@ -36,8 +36,8 @@ Setting('BASE_URL', '/');
 Setting('DISABLE_URL_REWRITING', false);
 
 // The folders to show / scan for media files
-// For deviating sorting: When next to a folder a file "<original folder name>.sort" exists,
-// the content of this file is used for sorting
+// For deviating sorting: When next to a folder a (text) file "<original folder name>.sort" exists,
+// the content of this file is used for sorting instead of the folder name
 Setting('FOLDERS', [
 	[
 		'name' => 'Folder1',
@@ -46,7 +46,8 @@ Setting('FOLDERS', [
 	],
 	[
 		'name' => 'Folder2',
-		'path' => '/var/data/pictures/folder2'
+		'path' => '/var/data/pictures/folder2',
+		'show_filenames' => true // Whether to show filenames or not, defaults to "SHOW_FILENAMES" (see below) when omitted
 	]
 ]);
 
@@ -72,7 +73,8 @@ Setting('THUMBS_FOLDER_NAME', '__thumbs');
 // Whether to play videos inline (=> true) or only in a lightbox (=> false)
 Setting('PLAY_VIDEOS_INLINE', false);
 
-// Whether to show filenames or not
+// Whether to show filenames or not by default
+// (this can also be set per folder, see above)
 Setting('SHOW_FILENAMES', false);
 
 // When this is set, this is used / shown as the application title (instead of "Piksi")

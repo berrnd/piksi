@@ -62,12 +62,19 @@ class MediaFolderService extends BaseService
 			throw new \Exception('Invalid folder index ' . $folderIndex);
 		}
 
-		$folderPath = realpath(PIKSI_FOLDERS[$folderIndex]['path']);
+		$folder = PIKSI_FOLDERS[$folderIndex];
+		$folderPath = realpath($folder['path']);
 		$subFolderPath = realpath($folderPath . '/' . ltrim($subFolderPathRelative, '/'));
 
 		if (!string_starts_with($subFolderPath, $folderPath))
 		{
 			throw new \Exception($subFolderPathRelative . ' is not a subfolder of ' . $folderPath . ' or it doesn\'t exist');
+		}
+
+		$showFileNames = PIKSI_SHOW_FILENAMES;
+		if (array_key_exists('show_filenames', $folder))
+		{
+			$showFileNames = $folder['show_filenames'];
 		}
 
 		$allFileExtensions = array_merge(PIKSI_PICTURE_FILEEXT, PIKSI_VIDEO_FILEEXT, PIKSI_AUDIO_FILEEXT);
@@ -139,7 +146,8 @@ class MediaFolderService extends BaseService
 					'foldersCount' => $foldersCount,
 					'picturesCount' => $picturesCount,
 					'videosCount' => $videosCount,
-					'audiosCount' => $audiosCount
+					'audiosCount' => $audiosCount,
+					'show_filename' => $showFileNames
 				];
 			}
 			elseif ($file->isFile() && in_array($fileExtension, $allFileExtensions))
@@ -170,13 +178,14 @@ class MediaFolderService extends BaseService
 					'name' => $file->getBasename('.' . $file->getExtension()),
 					'sort_name' => 'bbbb' . $fileName,
 					'relativePath' => $subFolderPathRelative . '/' . $fileName,
-					'thumbRelativePath' => $thumbRelativePath
+					'thumbRelativePath' => $thumbRelativePath,
+					'show_filename' => $showFileNames
 				];
 			}
 		}
 
 		$sort = SORT_ASC;
-		if (array_key_exists('sort', PIKSI_FOLDERS[$folderIndex]) && PIKSI_FOLDERS[$folderIndex]['sort'] == 'desc')
+		if (array_key_exists('sort', $folder) && $folder['sort'] == 'desc')
 		{
 			$sort = SORT_DESC;
 		}

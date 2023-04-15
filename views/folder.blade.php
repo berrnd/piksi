@@ -31,8 +31,8 @@
 <div class="row d-flex justify-content-center">
 
 	@foreach($items as $item)
-	<div class="col-12 col-xl-4 @if($item['type'] == 'folder' || !PIKSI_SHOW_FILENAMES) pb-2 @endif @if($item['type'] != 'folder') d-flex justify-content-center @endif">
-		@if($item['type'] != 'folder' && PIKSI_SHOW_FILENAMES)
+	<div class="col-12 col-xl-4 @if($item['type'] == 'folder' || !$item['show_filename']) pb-2 @endif @if($item['type'] != 'folder') d-flex justify-content-center @endif">
+		@if($item['type'] != 'folder' && $item['show_filename'])
 		<figure class="figure @if($item['type'] == 'audio') w-100 @endif">
 			@endif
 			@if($item['type'] == 'picture')
@@ -98,7 +98,7 @@
 				</div>
 			</a>
 			@endif
-			@if($item['type'] != 'folder' && PIKSI_SHOW_FILENAMES)
+			@if($item['type'] != 'folder' && $item['show_filename'])
 			<figcaption class="figure-caption text-center">{{ $item['name'] }}</figcaption>
 		</figure>
 		@endif
