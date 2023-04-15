@@ -38,3 +38,9 @@ a.discrete-link:focus {
 .embedded .hide-when-embedded {
 	display: none;
 }
+
+@media (min-width: 768px) {
+	.modal-video {
+		max-width: 80%;
+	}
+}

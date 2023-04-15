@@ -162,7 +162,7 @@ $(document).on("click", ".show-as-dialog-video", function(e)
 	bootbox.dialog({
 		"message": dialogHtml,
 		"size": "extra-large"
-	}).find(".modal-content").addClass("bg-secondary");
+	}).find(".modal-dialog").addClass("modal-video").find(".modal-content").addClass("bg-secondary");
 });
 
 $(document).on("click", ".close-bootbox", function(e)
