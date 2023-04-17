@@ -46,14 +46,21 @@ a.discrete-link:focus {
 /* Make media modals bigger on bigger screens */
 @media (min-width: 768px) {
 	.media-modal {
+		min-height: calc(100% - 0.25rem * 2);
 		max-width: 85%;
+		margin-top: 0.25rem;
+		margin-bottom: 0.25rem;
 	}
 }
 
 /*
 	Limit the height of image/video modals to always fit on the screen
-	(170px is the combined height of elements surrounding the modal body)
+	(170px/130px is the combined height of elements surrounding the modal body)
 */
-.media-modal .img-fluid {
+.media-modal img.img-fluid {
 	max-height: calc(100vh - 170px);
+}
+
+.media-modal .ratio {
+	max-height: calc(100vh - 130px);
 }
