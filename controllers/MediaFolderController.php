@@ -51,7 +51,7 @@ class MediaFolderController extends BaseController
 			$folderPath = realpath(PIKSI_FOLDERS[$request->getQueryParams()['folder']]['path']);
 			$filePath = realpath($folderPath . '/' . ltrim($request->getQueryParams()['path'], '/'));
 
-			if (!string_starts_with($filePath, $folderPath) || !file_exists($filePath) || !in_array(pathinfo($filePath, PATHINFO_EXTENSION), array_merge(PIKSI_PICTURE_FILEEXT, PIKSI_VIDEO_FILEEXT, PIKSI_AUDIO_FILEEXT)))
+			if (!string_starts_with($filePath, $folderPath) || !file_exists($filePath) || !in_array(strtolower(pathinfo($filePath, PATHINFO_EXTENSION)), array_merge(PIKSI_PICTURE_FILEEXT, PIKSI_VIDEO_FILEEXT, PIKSI_AUDIO_FILEEXT)))
 			{
 				return $response->withStatus(404);
 			}
