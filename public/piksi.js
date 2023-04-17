@@ -140,7 +140,7 @@ $(document).on("click", ".show-as-dialog-image", function(e)
 	bootbox.dialog({
 		"message": dialogHtml,
 		"size": "extra-large"
-	}).find(".modal-content").addClass("bg-secondary");
+	}).find(".modal-dialog").addClass("media-modal").find(".modal-content").addClass("bg-secondary");
 });
 
 $(document).on("click", ".show-as-dialog-video", function(e)
@@ -153,16 +153,14 @@ $(document).on("click", ".show-as-dialog-video", function(e)
 				<i class="fa-solid fa-left-long"></i> ' + __t('Back') + ' \
 			</button> \
 		</div> \
-		<div class="ratio ratio-16x9"> \
 			<video controls autoplay class="img-fluid"> \
 				<source src="' + $(e.currentTarget).attr("href") + '"> \
-			</video> \
 		</div>';
 
 	bootbox.dialog({
 		"message": dialogHtml,
 		"size": "extra-large"
-	}).find(".modal-dialog").addClass("modal-video").find(".modal-content").addClass("bg-secondary");
+	}).find(".modal-dialog").addClass("media-modal").find(".modal-content").addClass("bg-secondary");
 });
 
 $(document).on("click", ".close-bootbox", function(e)
