@@ -8,11 +8,6 @@
 
 	<meta name="robots"
 		content="noindex,nofollow">
-	<meta name="format-detection"
-		content="telephone=no">
-
-	<meta name="author"
-		content="Bernd Bestel (bernd@berrnd.de)">
 
 	<link rel="icon"
 		type="image/png"
