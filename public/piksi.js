@@ -54,7 +54,7 @@ __t = function(text, ...placeholderValues)
 		}
 	}
 
-	return Piksi.Translator.__(text, ...placeholderValues)
+	return sprintf(Piksi.Translator.__(text, ...placeholderValues), ...placeholderValues);
 }
 __n = function(number, singularForm, pluralForm)
 {
@@ -72,7 +72,7 @@ __n = function(number, singularForm, pluralForm)
 		pluralForm = singularForm;
 	}
 
-	return Piksi.Translator.n__(singularForm, pluralForm, Math.abs(number), Math.abs(number))
+	return Piksi.Translator.n__(singularForm, pluralForm, Math.abs(number), Math.abs(number));
 }
 
 ResizeResponsiveEmbeds = function()
