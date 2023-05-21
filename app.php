@@ -83,5 +83,7 @@ $errorMiddleware->setDefaultErrorHandler(
 	new ExceptionController($app, $container)
 );
 
+$app->getRouteCollector()->setCacheFile(PIKSI_DATAPATH . '/viewcache/route_cache.php');
+
 ob_clean(); // No response output before here
 $app->run();
