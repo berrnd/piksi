@@ -72,7 +72,9 @@ __n = function(number, singularForm, pluralForm)
 		pluralForm = singularForm;
 	}
 
-	return Piksi.Translator.n__(singularForm, pluralForm, Math.abs(number), Math.abs(number));
+	number = Math.abs(number);
+
+	return sprintf(Piksi.Translator.n__(singularForm, pluralForm, number, number), number.toString());
 }
 
 ResizeResponsiveEmbeds = function()
