@@ -74,7 +74,7 @@ __n = function(number, singularForm, pluralForm)
 
 	number = Math.abs(number);
 
-	return sprintf(Piksi.Translator.n__(singularForm, pluralForm, number, number), number.toString());
+	return sprintf(Piksi.Translator.n__(singularForm, pluralForm, number, number), number.toLocaleString());
 }
 
 ResizeResponsiveEmbeds = function()
