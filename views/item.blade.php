@@ -1,4 +1,4 @@
-@if($item['type'] != 'folder' && ($item['show_filename'] || !empty($item['badgeText'])))
+@if($item['type'] != 'folder' && ($item['showFilename'] || !empty($item['badgeText'])))
 <figure class="figure @if($item['type'] == 'audio') w-100 @endif">
 	@endif
 
@@ -42,6 +42,12 @@
 			@if(empty($item['coverImagePathRelative']))
 			<div class="card-header fs-2 fw-semibold">
 				{{ $item['name'] }}
+
+				@if(!empty($item['badgeText']) && empty($item['coverImagePathRelative']))
+				<span class="badge bg-info fs-3">
+					{{ $item['badgeText'] }}
+				</span>
+				@endif
 			</div>
 			@else
 			<img class="card-img-top"
@@ -49,7 +55,7 @@
 				src="{{ $U('/file?folder='. $item['folderIndex'] . '&path=' . urlencode($item['coverImagePathRelative'])) }}">
 			@endif
 			<div class="card-body fs-3">
-				@if(!empty($item['badgeText']))
+				@if(!empty($item['badgeText']) && !empty($item['coverImagePathRelative']))
 				<span class="position-absolute top-0 end-0 badge mt-2 me-2 bg-info fs-3">
 					{{ $item['badgeText'] }}
 				</span>
@@ -72,17 +78,17 @@
 	</a>
 	@endif
 
-	@if($item['type'] != 'folder' && ($item['show_filename'] || !empty($item['badgeText'])))
+	@if($item['type'] != 'folder' && ($item['showFilename'] || !empty($item['badgeText'])))
 	<figcaption class="figure-caption text-center">
-		@if($item['show_filename'])
+		@if($item['showFilename'])
 		{{ $item['name'] }}
 		@endif
 
 		@if(!empty($item['badgeText']))
-		@if($item['show_filename'])
+		@if($item['showFilename'])
 		<br>
 		@endif
-		<span class="badge bg-info fs-4 mt-1">
+		<span class="badge bg-info fs-4 @if($item['showFilename']) mt-1 @endif">
 			{{ $item['badgeText'] }}
 		</span>
 		@endif

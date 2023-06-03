@@ -14,7 +14,7 @@
 					{{ $folder['name'] }}
 
 					@if(!empty($folder['badgeText']))
-					<span class="position-absolute top-0 end-0 badge mt-2 me-2 bg-info fs-3">
+					<span class="badge bg-info fs-3">
 						{{ $folder['badgeText'] }}
 					</span>
 					@endif
@@ -43,7 +43,7 @@
 @if(count($specialItems) > 0)
 <div class="row d-flex justify-content-center">
 	@foreach($specialItems as $item)
-	<div class="col-12 col-xl-4 d-flex justify-content-center @if(!$item['show_filename']) pb-2 @endif">
+	<div class="col-12 col-xl-4 d-flex justify-content-center @if(!$item['showFilename']) pb-2 @endif">
 		@include('item', [
 		'item' => $item
 		])

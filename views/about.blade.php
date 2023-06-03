@@ -8,15 +8,15 @@
 		<h2 class="title">@yield('title')</h2>
 
 		<div class="border-top py-2">
-			Version <code>{{ $version }}</code><br>
-			{{ $__t('Released on') }} <code>{{ $releaseDate }}</code> <time class="timeago timeago-contextual"
-				datetime="{{ $releaseDate }}"></time>
+			Version <code>{{ $versionInfo->Version }}</code><br>
+			{{ $__t('Released on') }} <code>{{ $versionInfo->ReleaseDate }}</code> <time class="timeago timeago-contextual"
+				datetime="{{ $versionInfo->ReleaseDate }}"></time>
 		</div>
 
 		<div class="py-2">
-			PHP Version <code>{{ $system_info['php_version'] }}</code><br>
-			OS <code>{{ $system_info['os'] }}</code><br>
-			Client <code>{{ $system_info['client'] }}</code>
+			PHP Version <code>{{ $systemInfo['php_version'] }}</code><br>
+			OS <code>{{ $systemInfo['os'] }}</code><br>
+			Client <code>{{ $systemInfo['client'] }}</code>
 		</div>
 
 		<div class="border-top py-2">

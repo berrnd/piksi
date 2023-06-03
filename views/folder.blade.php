@@ -31,7 +31,7 @@
 <div class="row d-flex justify-content-center">
 
 	@foreach($items as $item)
-	<div class="col-12 col-xl-4 @if($item['type'] == 'folder' || !$item['show_filename']) pb-2 @endif @if($item['type'] != 'folder') d-flex justify-content-center @endif">
+	<div class="col-12 col-xl-4 @if($item['type'] == 'folder' || !$item['showFilename']) pb-2 @endif @if($item['type'] != 'folder') d-flex justify-content-center @endif">
 		@include('item', [
 		'item' => $item
 		])

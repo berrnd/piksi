@@ -56,7 +56,7 @@ class ExceptionController extends BaseApiController
 
 		return $this->render($response->withStatus(500), 'errors/500', [
 			'exception' => $exception,
-			'system_info' => $this->getApplicationService()->GetSystemInfo()
+			'systemInfo' => $this->getApplicationService()->GetSystemInfo()
 		]);
 	}
 }

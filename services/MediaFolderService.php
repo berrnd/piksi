@@ -196,7 +196,7 @@ class MediaFolderService extends BaseService
 				$items[] = [
 					'folderIndex' => $folderIndex,
 					'type' => 'folder',
-					'sort_name' => 'aaaa' . $sortName,
+					'sortName' => 'aaaa' . $sortName,
 					'name' => $fileName,
 					'badgeText' => $badgeText,
 					'relativePath' => $subFolderPathRelative . '/' . $fileName,
@@ -205,7 +205,7 @@ class MediaFolderService extends BaseService
 					'picturesCount' => $picturesCount,
 					'videosCount' => $videosCount,
 					'audiosCount' => $audiosCount,
-					'show_filename' => $showFileNames
+					'showFilename' => $showFileNames
 				];
 			}
 			elseif ($file->isFile() && in_array($fileExtension, $allFileExtensions))
@@ -243,10 +243,10 @@ class MediaFolderService extends BaseService
 					'type' => $type,
 					'name' => $file->getBasename('.' . $file->getExtension()),
 					'badgeText' => $badgeText,
-					'sort_name' => 'bbbb' . $fileName,
+					'sortName' => 'bbbb' . $fileName,
 					'relativePath' => $subFolderPathRelative . '/' . $fileName,
 					'thumbRelativePath' => $thumbRelativePath,
-					'show_filename' => $showFileNames
+					'showFilename' => $showFileNames
 				];
 			}
 		}
@@ -257,7 +257,7 @@ class MediaFolderService extends BaseService
 			$sort = SORT_DESC;
 		}
 
-		array_multisort(array_column($items, 'sort_name'), $sort, $items);
+		array_multisort(array_column($items, 'sortName'), $sort, $items);
 
 		return $items;
 	}

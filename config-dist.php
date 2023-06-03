@@ -55,7 +55,7 @@ Setting('FOLDERS', [
 
 		'show_filenames' => true, // Whether to show filenames or not, defaults to "SHOW_FILENAMES" (see below) when omitted
 		'badge_text' => '', // When provided and not empty, this text will be shown as a badge next to the title
-		'is_special' => true // When true, this folder will be hidden from the overview page, instead the content of it will be shown directly there (only makes sense when having more than one folder configured)
+		'is_special' => true // When true, this folder will be hidden from the overview page and instead the content of it will be shown directly there (only makes sense when having more than one folder configured)
 	]
 ]);
 
