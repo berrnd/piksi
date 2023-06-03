@@ -18,7 +18,7 @@
 
 	<title>@yield('title') | {{$title}}</title>
 
-	<link href="{{ $U('/node_modules/@fontsource/noto-sans/latin.css?v=', true) }}{{ $version }}"
+	<link href="{{ $U('/node_modules/@fontsource/open-sans/latin.css?v=', true) }}{{ $version }}"
 		rel="stylesheet">
 	<link href="{{ $U('/node_modules/bootstrap/dist/css/bootstrap.min.css?v=', true) }}{{ $version }}"
 		rel="stylesheet">
