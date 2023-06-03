@@ -13,8 +13,19 @@ class MediaFolderService extends BaseService
 			$folder = PIKSI_FOLDERS[$i];
 			$folderPath = rtrim($folder['path'], '/');
 
+			$isSpecial = false;
+			if (array_key_exists('is_special', $folder))
+			{
+				$isSpecial = $folder['is_special'];
+			}
+
 			if (is_dir($folderPath))
 			{
+				if ($isSpecial)
+				{
+					continue;
+				}
+
 				$badgeText = '';
 				if (array_key_exists('badge_text', $folder))
 				{
@@ -49,6 +60,7 @@ class MediaFolderService extends BaseService
 				$folders[] = [
 					'name' => $folder['name'],
 					'badgeText' => $badgeText,
+
 					'foldersCount' => $foldersCount,
 					'picturesCount' => $picturesCount,
 					'videosCount' => $videosCount,
@@ -58,6 +70,35 @@ class MediaFolderService extends BaseService
 		}
 
 		return $folders;
+	}
+
+	public function GetSpecialItems()
+	{
+		$items = [];
+
+		for ($i = 0; $i < count(PIKSI_FOLDERS); $i++)
+		{
+			$folder = PIKSI_FOLDERS[$i];
+			$folderPath = rtrim($folder['path'], '/');
+
+			$isSpecial = false;
+			if (array_key_exists('is_special', $folder))
+			{
+				$isSpecial = $folder['is_special'];
+			}
+
+			if (is_dir($folderPath))
+			{
+				if (!$isSpecial)
+				{
+					continue;
+				}
+
+				$items = array_merge($items, $this->GetFolder($i, '/', true));
+			}
+		}
+
+		return $items;
 	}
 
 	public function GetFolder(int $folderIndex, string $subFolderPathRelative, bool $skipSubfolders = false)
@@ -95,6 +136,7 @@ class MediaFolderService extends BaseService
 
 			$fileName = $file->getFilename();
 			$fileExtension = strtolower($file->getExtension());
+			$fileNameWithoutExtension = $file->getBasename('.' . $file->getExtension());
 
 			if ($file->isDir())
 			{
@@ -152,6 +194,7 @@ class MediaFolderService extends BaseService
 				}
 
 				$items[] = [
+					'folderIndex' => $folderIndex,
 					'type' => 'folder',
 					'sort_name' => 'aaaa' . $sortName,
 					'name' => $fileName,
@@ -188,9 +231,18 @@ class MediaFolderService extends BaseService
 					$thumbRelativePath = $subFolderPathRelative . '/' . PIKSI_THUMBS_FOLDER_NAME . '/' . $fileName;
 				}
 
+				$badgeTextFilePath = str_replace($fileName, $fileNameWithoutExtension . '.badge', $file->getRealPath());
+				$badgeText = '';
+				if (file_exists($badgeTextFilePath))
+				{
+					$badgeText = file_get_contents($badgeTextFilePath);
+				}
+
 				$items[] = [
+					'folderIndex' => $folderIndex,
 					'type' => $type,
 					'name' => $file->getBasename('.' . $file->getExtension()),
+					'badgeText' => $badgeText,
 					'sort_name' => 'bbbb' . $fileName,
 					'relativePath' => $subFolderPathRelative . '/' . $fileName,
 					'thumbRelativePath' => $thumbRelativePath,

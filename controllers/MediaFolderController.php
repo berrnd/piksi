@@ -20,7 +20,8 @@ class MediaFolderController extends BaseController
 			else
 			{
 				return $this->render($response, 'overview', [
-					'rootFolders' => $this->getMediaFolderService()->GetRootFolder()
+					'rootFolders' => $this->getMediaFolderService()->GetRootFolder(),
+					'specialItems' => $this->getMediaFolderService()->GetSpecialItems()
 				]);
 			}
 		}

@@ -36,10 +36,13 @@ Setting('BASE_URL', '/');
 Setting('DISABLE_URL_REWRITING', false);
 
 // The folders to show / scan for media files
+// When only one folder is configured, the content of that folder will be directly shown on the root page, otherwise an overview of all configured folders
+//
 // For deviating sorting:
 // When next to a folder a (text) file "<original folder name>.sort" exists, the content of this file is used for sorting instead of the folder name
+//
 // For displaying badges:
-// When next to a folder a (text) file "<original folder name>.badge" exists, the content of this file be shown as a badge next to the folder title
+// When next to a folder (or file) a (text) file "<original folder/file name>.badge" exists, the content of this file be shown as a badge next to the folder/file title
 Setting('FOLDERS', [
 	[
 		'name' => 'Folder1',
@@ -49,8 +52,10 @@ Setting('FOLDERS', [
 	[
 		'name' => 'Folder2',
 		'path' => '/var/data/pictures/folder2',
+
 		'show_filenames' => true, // Whether to show filenames or not, defaults to "SHOW_FILENAMES" (see below) when omitted
-		'badge_text' => '' // When provided and not empty, this text will be shown as a badge next to the title
+		'badge_text' => '', // When provided and not empty, this text will be shown as a badge next to the title
+		'is_special' => true // When true, this folder will be hidden from the overview page, instead the content of it will be shown directly there (only makes sense when having more than one folder configured)
 	]
 ]);
 

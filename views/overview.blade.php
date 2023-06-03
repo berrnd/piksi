@@ -39,4 +39,16 @@
 	@endforeach
 
 </div>
+
+@if(count($specialItems) > 0)
+<div class="row d-flex justify-content-center">
+	@foreach($specialItems as $item)
+	<div class="col-12 col-xl-4 d-flex justify-content-center @if(!$item['show_filename']) pb-2 @endif">
+		@include('item', [
+		'item' => $item
+		])
+	</div>
+	@endforeach
+</div>
+@endif
 @stop
