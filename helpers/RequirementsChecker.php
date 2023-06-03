@@ -33,9 +33,9 @@ class RequirementsChecker
 			throw new \Exception('/config-dist.php not found - please do not remove this file');
 		}
 
-		if (!file_exists(__DIR__ . '/../vendor/autoload.php'))
+		if (!file_exists(__DIR__ . '/../packages/autoload.php'))
 		{
-			throw new \Exception('/vendor/autoload.php not found - have you run Composer?');
+			throw new \Exception('/packages/autoload.php not found - have you run Composer?');
 		}
 
 		if (!is_writable(PIKSI_DATAPATH))

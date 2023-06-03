@@ -20,6 +20,7 @@
 		]
 	},
 	"config": {
+		"vendor-dir": "packages",
 		"platform-check": false
 	}
 }

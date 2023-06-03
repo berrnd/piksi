@@ -20,7 +20,7 @@ catch (\Exception $ex)
 }
 
 // Load composer dependencies
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/packages/autoload.php';
 
 // Load config files
 require_once PIKSI_DATAPATH . '/config.php';

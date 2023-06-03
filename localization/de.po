@@ -12,7 +12,7 @@ msgstr "Übersicht"
 msgid "About"
 msgstr "Über"
 
-# Lowercase locale based on the filename in /public/node_modules/moment/locale
+# Lowercase locale based on the filename in /public/packages/moment/locale
 msgid "moment_locale"
 msgstr "de"
 
