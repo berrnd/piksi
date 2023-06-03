@@ -12,6 +12,12 @@
 			<div class="card text-center">
 				<div class="card-header fs-2 fw-semibold">
 					{{ $folder['name'] }}
+
+					@if(!empty($folder['badgeText']))
+					<span class="position-absolute top-0 end-0 badge mt-2 me-2 bg-info fs-3">
+						{{ $folder['badgeText'] }}
+					</span>
+					@endif
 				</div>
 				<div class="card-body fs-3">
 					@if($folder['foldersCount'] > 0)

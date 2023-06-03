@@ -15,6 +15,12 @@ class MediaFolderService extends BaseService
 
 			if (is_dir($folderPath))
 			{
+				$badgeText = '';
+				if (array_key_exists('badge_text', $folder))
+				{
+					$badgeText = $folder['badge_text'];
+				}
+
 				$subFolderInfo = $this->GetFolder($i, '/', true);
 				$foldersCount = 0;
 				$picturesCount = 0;
@@ -42,6 +48,7 @@ class MediaFolderService extends BaseService
 
 				$folders[] = [
 					'name' => $folder['name'],
+					'badgeText' => $badgeText,
 					'foldersCount' => $foldersCount,
 					'picturesCount' => $picturesCount,
 					'videosCount' => $videosCount,
@@ -137,10 +144,18 @@ class MediaFolderService extends BaseService
 					$sortName = file_get_contents($alternativeSortTextFilePath);
 				}
 
+				$badgeTextFilePath = $file->getRealPath() . '/../' . $fileName . '.badge';
+				$badgeText = '';
+				if (file_exists($badgeTextFilePath))
+				{
+					$badgeText = file_get_contents($badgeTextFilePath);
+				}
+
 				$items[] = [
 					'type' => 'folder',
 					'sort_name' => 'aaaa' . $sortName,
 					'name' => $fileName,
+					'badgeText' => $badgeText,
 					'relativePath' => $subFolderPathRelative . '/' . $fileName,
 					'coverImagePathRelative' => $coverImagePathRelative,
 					'foldersCount' => $foldersCount,

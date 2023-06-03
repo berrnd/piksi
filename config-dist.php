@@ -36,8 +36,10 @@ Setting('BASE_URL', '/');
 Setting('DISABLE_URL_REWRITING', false);
 
 // The folders to show / scan for media files
-// For deviating sorting: When next to a folder a (text) file "<original folder name>.sort" exists,
-// the content of this file is used for sorting instead of the folder name
+// For deviating sorting:
+// When next to a folder a (text) file "<original folder name>.sort" exists, the content of this file is used for sorting instead of the folder name
+// For displaying badges:
+// When next to a folder a (text) file "<original folder name>.badge" exists, the content of this file be shown as a badge next to the folder title
 Setting('FOLDERS', [
 	[
 		'name' => 'Folder1',
@@ -47,7 +49,8 @@ Setting('FOLDERS', [
 	[
 		'name' => 'Folder2',
 		'path' => '/var/data/pictures/folder2',
-		'show_filenames' => true // Whether to show filenames or not, defaults to "SHOW_FILENAMES" (see below) when omitted
+		'show_filenames' => true, // Whether to show filenames or not, defaults to "SHOW_FILENAMES" (see below) when omitted
+		'badge_text' => '' // When provided and not empty, this text will be shown as a badge next to the title
 	]
 ]);
 

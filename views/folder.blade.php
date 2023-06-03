@@ -82,6 +82,12 @@
 						src="{{ $U('/file?folder='. $folderIndex . '&path=' . urlencode($item['coverImagePathRelative'])) }}">
 					@endif
 					<div class="card-body fs-3">
+						@if(!empty($item['badgeText']))
+						<span class="position-absolute top-0 end-0 badge mt-2 me-2 bg-info fs-3">
+							{{ $item['badgeText'] }}
+						</span>
+						@endif
+
 						@if($item['foldersCount'] > 0)
 						{{ $__n($item['foldersCount'], '%1$s album', '%1$s albums') }}<br>
 						@endif
