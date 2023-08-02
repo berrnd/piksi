@@ -3,13 +3,15 @@
 use Piksi\Middleware\JsonMiddleware;
 use Slim\Routing\RouteCollectorProxy;
 
-$app->group('', function (RouteCollectorProxy $group) {
+$app->group('', function (RouteCollectorProxy $group)
+{
 	$group->get('/', '\Piksi\Controllers\MediaFolderController:Overview');
 	$group->get('/file', '\Piksi\Controllers\MediaFolderController:ServeFile');
 
 	$group->get('/about', '\Piksi\Controllers\SystemController:About');
 });
 
-$app->group('/api', function (RouteCollectorProxy $group) {
+$app->group('/api', function (RouteCollectorProxy $group)
+{
 	$group->post('/system/log-missing-localization', '\Piksi\Controllers\SystemApiController:LogMissingLocalization');
 })->add(JsonMiddleware::class);

@@ -57,11 +57,13 @@ AppFactory::setContainer(new DIContainer());
 $app = AppFactory::create();
 
 $container = $app->getContainer();
-$container->set('view', function (Container $container) {
+$container->set('view', function (Container $container)
+{
 	return new Blade(__DIR__ . '/views', PIKSI_DATAPATH . '/viewcache');
 });
 
-$container->set('UrlManager', function (Container $container) {
+$container->set('UrlManager', function (Container $container)
+{
 	return new UrlManager(PIKSI_BASE_URL);
 });
 

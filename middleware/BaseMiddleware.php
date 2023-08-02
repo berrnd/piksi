@@ -14,6 +14,5 @@ class BaseMiddleware
 	}
 
 	protected $AppContainer;
-
 	protected $ApplicationService;
 }

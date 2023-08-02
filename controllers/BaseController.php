@@ -44,15 +44,18 @@ class BaseController
 		$this->View->set('version', $versionInfo->Version);
 
 		$localizationService = $this->getLocalizationService();
-		$this->View->set('__t', function (string $text, ...$placeholderValues) use ($localizationService) {
+		$this->View->set('__t', function (string $text, ...$placeholderValues) use ($localizationService)
+		{
 			return $localizationService->__t($text, $placeholderValues);
 		});
-		$this->View->set('__n', function ($number, $singularForm, $pluralForm) use ($localizationService) {
+		$this->View->set('__n', function ($number, $singularForm, $pluralForm) use ($localizationService)
+		{
 			return $localizationService->__n($number, $singularForm, $pluralForm);
 		});
 		$this->View->set('LocalizationStrings', $localizationService->GetPoAsJsonString());
 
-		$this->View->set('U', function ($relativePath, $isResource = false) use ($container) {
+		$this->View->set('U', function ($relativePath, $isResource = false) use ($container)
+		{
 			return $container->get('UrlManager')->ConstructUrl($relativePath, $isResource);
 		});
 

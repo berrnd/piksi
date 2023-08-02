@@ -16,11 +16,8 @@ class LocalizationService
 	}
 
 	protected $Po;
-
 	protected $Pot;
-
 	protected $Translator;
-
 	private static $instanceMap = [];
 
 	public function CheckAndAddMissingTranslationToPot($text)
