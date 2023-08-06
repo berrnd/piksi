@@ -15,6 +15,7 @@ class BaseController
 	}
 
 	protected $AppContainer;
+	private $View;
 
 	protected function getApplicationservice()
 	{
