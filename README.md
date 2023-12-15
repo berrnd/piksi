@@ -44,7 +44,7 @@ Alternatively clone this repository (the `release` branch always references the 
 
 ### Platform support
 
-- PHP 8.1 or 8.2
+- PHP 8.2 or 8.3
   - Required PHP extensions: `fileinfo`, `ctype`, `json`, `intl`, `zlib`, `mbstring`
 - Recent Firefox, Chrome or Edge
 
