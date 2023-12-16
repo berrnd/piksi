@@ -2,8 +2,8 @@
 
 namespace Piksi\Helpers;
 
-const REQUIRED_PHP_EXTENSIONS = ['fileinfo', 'ctype', 'json', 'intl', 'zlib', 'mbstring'];
-const REQUIRED_PHP_VERSION = '8.1.0';
+const REQUIRED_PHP_EXTENSIONS = ['fileinfo', 'ctype', 'intl', 'zlib', 'mbstring'];
+const REQUIRED_PHP_VERSION = '8.2.0';
 
 class RequirementsChecker
 {
