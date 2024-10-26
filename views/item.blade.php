@@ -62,16 +62,16 @@
 				@endif
 
 				@if($item['foldersCount'] > 0)
-				{{ $__n($item['foldersCount'], '%1$s album', '%1$s albums') }}<br>
+				<span class="folder-item-count">{{ $__n($item['foldersCount'], '%1$s album', '%1$s albums') }}</span>
 				@endif
 				@if($item['picturesCount'] > 0)
-				{{ $__n($item['picturesCount'], '%1$s picture', '%1$s pictures') }}<br>
+				<span class="folder-item-count">{{ $__n($item['picturesCount'], '%1$s picture', '%1$s pictures') }}</span>
 				@endif
 				@if($item['videosCount'] > 0)
-				{{ $__n($item['videosCount'], '%1$s video', '%1$s videos') }}<br>
+				<span class="folder-item-count">{{ $__n($item['videosCount'], '%1$s video', '%1$s videos') }}</span>
 				@endif
 				@if($item['audiosCount'] > 0)
-				{{ $__n($item['audiosCount'], '%1$s audio', '%1$s audios') }}
+				<span class="folder-item-count">{{ $__n($item['audiosCount'], '%1$s audio', '%1$s audios') }}</span>
 				@endif
 			</div>
 		</div>

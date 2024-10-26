@@ -21,16 +21,16 @@
 				</div>
 				<div class="card-body fs-3">
 					@if($folder['foldersCount'] > 0)
-					{{ $__n($folder['foldersCount'], '%1$s album', '%1$s albums') }}<br>
+					<span class="folder-item-count">{{ $__n($folder['foldersCount'], '%1$s album', '%1$s albums') }}</span>
 					@endif
 					@if($folder['picturesCount'] > 0)
-					{{ $__n($folder['picturesCount'], '%1$s picture', '%1$s pictures') }}<br>
+					<span class="folder-item-count">{{ $__n($folder['picturesCount'], '%1$s picture', '%1$s pictures') }}</span>
 					@endif
 					@if($folder['videosCount'] > 0)
-					{{ $__n($folder['videosCount'], '%1$s video', '%1$s videos') }}<br>
+					<span class="folder-item-count">{{ $__n($folder['videosCount'], '%1$s video', '%1$s videos') }}</span>
 					@endif
 					@if($folder['audiosCount'] > 0)
-					{{ $__n($folder['audiosCount'], '%1$s audio', '%1$s audios') }}
+					<span class="folder-item-count">{{ $__n($folder['audiosCount'], '%1$s audio', '%1$s audios') }}</span>
 					@endif
 				</div>
 			</div>
