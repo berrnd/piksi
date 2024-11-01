@@ -1,6 +1,9 @@
+-----
+
 <div align="center">
-<img alt="Logo" height="60" src="https://raw.githubusercontent.com/berrnd/piksi/main/public/img/logo.svg?sanitize=true" />
-<h3>A web-based self-hosted media gallery focused on simplicity.<br>It displays photos, videos and audios from an album based folder structure in an easy to use yet beautiful way.<br>Created by <a href="https://github.com/berrnd">@berrnd</a></h3>
+<img alt="Logo" height="50" src="https://raw.githubusercontent.com/berrnd/piksi/main/public/img/logo.svg?sanitize=true" />
+<h2>A web-based self-hosted media gallery focused on simplicity. It displays photos, videos and audios from an album based folder structure in an easy to use yet beautiful way.
+<em><h4>This is a hobby project by <a href="https://berrnd.de">Bernd Bestel</a></h4></em>
 </div>
 
 -----
@@ -11,7 +14,7 @@
 
 ## Features / Motivation
 
-Lately I've digitized a large number of photos and wanted to make them accessible to older family members. There are a lot of web-based image galleries out there and I kind of tried them all, but none of them met my expectations of a simple user interface that would work for people who didn't grow up with computers.
+Lately I've been digitizing a large number of photos and wanted to make them accessible to older family members. There are a lot of web-based image galleries out there and I kind of tried them all, but none of them met my expectations regarding a simple user interface that would work for people who didn't grow up with computers.
 
 I wanted to have a tool that
 
@@ -23,7 +26,7 @@ I wanted to have a tool that
   - any technical information is hidden by default, optionally filenames can be shown
   - it doesn't have user management (means no authentication, so run this in a trusted local network only)
 
-to make those family memories of yesterday accessible on devices of today, but without the overly complex stuff which practically often discourages the mentioned target audience to have fun with modern things. I haven't found that, so this is Piksi.
+to make those family memories of yesterday accessible on devices of today, but without the overly complex stuff which practically often discourages said target audience to have fun with modern things. I haven't found that, so this is Piksi.
 
 ## Questions / Help / Bug Reports / Feature Requests
 
