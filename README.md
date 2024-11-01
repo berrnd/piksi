@@ -2,7 +2,7 @@
 
 <div align="center">
 <img alt="Logo" height="50" src="https://raw.githubusercontent.com/berrnd/piksi/main/public/img/logo.svg?sanitize=true" />
-<h2>A web-based self-hosted media gallery focused on simplicity. It displays photos, videos and audios from an album based folder structure in an easy to use yet beautiful way.
+<h2>A web-based self-hosted media gallery focused on simplicity. It displays photos, videos and audios from an album based folder structure in an easy to use yet beautiful way.</h2>
 <em><h4>This is a hobby project by <a href="https://berrnd.de">Bernd Bestel</a></h4></em>
 </div>
 
