@@ -8,15 +8,29 @@
 		<h2 class="title">@yield('title')</h2>
 
 		<div class="border-top py-2">
-			Version <code>{{ $versionInfo->Version }}</code><br>
-			{{ $__t('Released on') }} <code>{{ $versionInfo->ReleaseDate }}</code> <time class="timeago timeago-contextual"
-				datetime="{{ $versionInfo->ReleaseDate }}"></time>
-		</div>
-
-		<div class="py-2">
-			PHP Version <code>{{ $systemInfo['php_version'] }}</code><br>
-			OS <code>{{ $systemInfo['os'] }}</code><br>
-			Client <code>{{ $systemInfo['client'] }}</code>
+			<table class="table table-borderless table-responsive table-sm text-start text-nowrap">
+				<tr>
+					<td class="text-end">Version</td>
+					<td><code>{{ $versionInfo->Version }}</code></td>
+				</tr>
+				<tr>
+					<td class="text-end">{{ $__t('Released on') }}</td>
+					<td><code>{{ $versionInfo->ReleaseDate }}</code> <time class="timeago timeago-contextual"
+							datetime="{{ $versionInfo->ReleaseDate }}"></time></td>
+				</tr>
+				<tr>
+					<td class="text-end">PHP Version</td>
+					<td><code>{{ $systemInfo['php_version'] }}</code></td>
+				</tr>
+				<tr>
+					<td class="text-end">OS</td>
+					<td><code>{{ $systemInfo['os'] }}</code></td>
+				</tr>
+				<tr>
+					<td class="text-end">Client</td>
+					<td><code>{{ $systemInfo['client'] }}</code></td>
+				</tr>
+			</table>
 		</div>
 
 		<div class="border-top py-2">
